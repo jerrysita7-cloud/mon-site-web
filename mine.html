@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince Obed Event's</title>
+
+<style>
+
+/* ===== STYLE GLOBAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#111;
+    scroll-behavior:smooth;
+}
+
+/* ===== NAVBAR ===== */
+header{
+    position:fixed;
+    width:100%;
+    background:rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    padding:20px 0;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#111;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#0071e3;
+}
+
+/* ===== SECTIONS ===== */
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px;
+}
+
+/* ===== HERO ===== */
+.hero{
+    background:linear-gradient(to bottom,#f5f5f7,#ffffff);
+}
+
+.hero h1{
+    font-size:60px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#555;
+    max-width:600px;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    margin-top:30px;
+    padding:12px 28px;
+    border-radius:25px;
+    background:#0071e3;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#005bb5;
+}
+
+/* ===== PHOTOS ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    width:100%;
+    max-width:1200px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* ===== VIDEOS ===== */
+.videos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+    width:100%;
+    max-width:1200px;
+}
+
+iframe{
+    width:100%;
+    height:250px;
+    border:none;
+    border-radius:20px;
+}
+
+/* ===== ABOUT ===== */
+.about p{
+    max-width:700px;
+    font-size:20px;
+    color:#555;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    padding:30px;
+    text-align:center;
+    color:#777;
+    font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .hero h1{
+        font-size:40px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<a href="#home">Accueil</a>
+<a href="#photos">Photos</a>
+<a href="#videos">Vidéos</a>
+<a href="#about">À propos</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+<h1>La simplicité. La puissance.</h1>
+<p>Un design inspiré d’Apple : minimal, élégant et moderne.</p>
+<a href="#photos" class="btn">Découvrir</a>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos">
+<h1>Galerie</h1>
+<div class="gallery">
+<img src="https://picsum.photos/600/400?random=1">
+<img src="https://picsum.photos/600/400?random=2">
+<img src="https://picsum.photos/600/400?random=3">
+<img src="https://picsum.photos/600/400?random=4">
+</div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+<h1>Vidéos</h1>
+<div class="videos">
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/9bZkp7q19f0" allowfullscreen></iframe>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+<h1>À propos</h1>
+<p>
+Je crée des expériences visuelles modernes et élégantes.  
+Ce site démontre un style minimaliste inspiré d’Apple, avec une attention particulière aux détails et à la fluidité.
+</p>
+</section>
+
+<footer>
+© 2026 - Portfolio Minimaliste
+</footer>
+
+<script>
+
+// Animation douce au scroll
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            section.style.opacity = 1;
+            section.style.transform = "translateY(0)";
+        }
+    });
+});
+
+// Style animation initial
+sections.forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = "translateY(40px)";
+    section.style.transition = "all 1s ease";
+});
+
+</script>
+
+</body>
+</html>
